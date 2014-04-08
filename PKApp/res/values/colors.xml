@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="half_white">#9bFFFFFF</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#FF787878</color>
+    <color name="bg_color_deep">#E5E5E5</color>
+    <color name="yello">#ffff00</color>
+    <color name="half_yello">#9bFFFF00</color>
+    <color name="black">#FF000000</color>
+    <color name="widget_btn_nor_color">#66ffffff</color>
+    <color name="widget_btn_click_color">#ffffff</color>
+
+</resources>

@@ -1,0 +1,334 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <WebView
+        android:id="@+id/pk_webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_pk_view" />
+
+    <LinearLayout
+        android:id="@+id/bottom_pk_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/gd_quick_action_bar_background"
+        android:orientation="vertical"
+        android:paddingTop="5dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/right_content"
+                android:orientation="vertical" >
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <!--
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/btn_zdfx"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/btn_gb_nor"
+                            android:textColor="@color/white"
+                            android:padding="5dp"
+                            android:text="自动分析" />
+
+                        <TextView
+                            android:id="@+id/btn_zcfx"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/btn_gb_nor"
+                            android:padding="5dp"
+                            android:textColor="@color/white"
+                            android:text="再次分析" />
+
+                        <TextView
+                            android:id="@+id/btn_xhzj"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/btn_gb_nor"
+                            android:padding="5dp"
+                            android:textColor="@color/white"
+                            android:text="星河战舰" />
+                    </LinearLayout>
+                    -->
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            style="@style/main_tab_bottom"
+                            android:text="自动分析" />
+
+                        <RadioButton
+                            style="@style/main_tab_bottom"
+                            android:layout_marginLeft="5dp"
+                            android:text="再次分析" />
+
+                        <RadioButton
+                            style="@style/main_tab_bottom"
+                            android:layout_marginLeft="5dp"
+                            android:text="星河战舰" />
+                    </RadioGroup>
+                </HorizontalScrollView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/btn_p"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_gb_nor"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingTop="5dp"
+                        android:text="P"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/btn_k"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/btn_gb_nor"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingTop="5dp"
+                        android:text="K"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/right_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12:22:40 P一倍 k两倍"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" >
+
+            <!--
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/btn_xl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_gb_nor"
+                    android:padding="5dp"
+                    android:textColor="@color/white"                   
+                    android:text="夏利" />
+
+                <TextView
+                    android:id="@+id/btn_stn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/btn_gb_nor"
+                    android:padding="5dp"
+                    android:textColor="@color/white"
+                    android:text="桑塔纳" />
+
+                <TextView
+                    android:id="@+id/btn_kll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/btn_gb_nor"
+                    android:padding="5dp"
+                    android:textColor="@color/white"
+                    android:text="卡罗拉" />
+
+                <TextView
+                    android:id="@+id/btn_yg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/btn_gb_nor"
+                    android:padding="5dp"
+                    android:textColor="@color/white"
+                    android:text="雅阁" />
+
+                <TextView
+                    android:id="@+id/btn_ad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/btn_gb_nor"
+                    android:padding="5dp"
+                    android:textColor="@color/white"
+                    android:text="奥迪A4" />
+
+                <TextView
+                    android:id="@+id/btn_bm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/btn_gb_nor"
+                    android:padding="5dp"
+                    android:textColor="@color/white"
+                    android:text="宝马" />
+
+                <TextView
+                    android:id="@+id/btn_bsj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/btn_gb_nor"
+                    android:padding="5dp"
+                    android:textColor="@color/white"
+                    android:text="保时捷" />
+
+                <TextView
+                    android:id="@+id/btn_lbjn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/btn_gb_nor"
+                    android:padding="5dp"
+                    android:textColor="@color/white"
+                    android:text="兰博基尼" />
+
+                <TextView
+                    android:id="@+id/btn_bjd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/btn_gb_nor"
+                    android:padding="5dp"
+                    android:textColor="@color/white"
+                    android:text="布加迪威航" />
+            </LinearLayout>
+            -->
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    style="@style/main_tab_bottom"
+                    android:text="夏利" />
+
+                <RadioButton
+                    style="@style/main_tab_bottom"
+                    android:layout_marginLeft="5dp"
+                    android:text="桑塔纳" />
+
+                <RadioButton
+                    style="@style/main_tab_bottom"
+                    android:layout_marginLeft="5dp"
+                    android:text="卡罗拉" />
+
+                <RadioButton
+                    style="@style/main_tab_bottom"
+                    android:layout_marginLeft="5dp"
+                    android:text="雅阁" />
+
+                <RadioButton
+                    style="@style/main_tab_bottom"
+                    android:layout_marginLeft="5dp"
+                    android:text="奥迪A4" />
+
+                <RadioButton
+                    style="@style/main_tab_bottom"
+                    android:layout_marginLeft="5dp"
+                    android:text="宝马" />
+
+                <RadioButton
+                    style="@style/main_tab_bottom"
+                    android:layout_marginLeft="5dp"
+                    android:text="保时捷" />
+
+                <RadioButton
+                    style="@style/main_tab_bottom"
+                    android:layout_marginLeft="5dp"
+                    android:text="兰博基尼" />
+
+                <RadioButton
+                    style="@style/main_tab_bottom"
+                    android:layout_marginLeft="5dp"
+                    android:text="布加迪威航" />
+            </RadioGroup>
+        </HorizontalScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            >
+            
+            <EditText 
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_normal"
+                android:padding="5dp"
+                android:hint="输入车辆升级密码"
+                android:textColor="@color/white"
+                />
+            <LinearLayout 
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:orientation="horizontal"
+                android:layout_marginLeft="5dp"
+                >
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="升级车辆"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_normal"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ></TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
