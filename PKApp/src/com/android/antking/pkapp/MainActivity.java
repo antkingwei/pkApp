@@ -320,11 +320,11 @@ public class MainActivity extends Activity {
         int length = pksSb.length();
         if(length>pk_level){
             pksSb.delete(0, (length-pk_level));
-        }
+        }        
+        pk_view.setText(pksSb.toString());
         if(pksSb.length()==pk_level){
             playPKType();
         }
-        pk_view.setText(pksSb.toString());
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
