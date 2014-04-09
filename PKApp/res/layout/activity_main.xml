@@ -3,12 +3,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
+    <FrameLayout 
 
-    <WebView
-        android:id="@+id/pk_webView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_pk_view" />
+        android:layout_above="@+id/bottom_pk_view"
+        >
+        <WebView
+        android:id="@+id/pk_webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+        <RelativeLayout 
+            android:id="@+id/pas_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:background="@drawable/gd_quick_action_bar_background"
+            >
+            <EditText 
+                android:id="@+id/first_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="@drawable/btn_normal"
+                android:textColor="@color/white"
+                android:layout_above="@+id/btn_submit"
+                android:hint="请输入密码"
+                android:password="true"
+                />
+            <TextView 
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="@drawable/btn_gb_nor"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
+                android:textSize="18dp"
+                android:text="确定"
+                android:textColor="@color/white"
+                />
+        </RelativeLayout>
+    </FrameLayout>
+    
 
     <LinearLayout
         android:id="@+id/bottom_pk_view"
@@ -18,6 +56,80 @@
         android:background="@drawable/gd_quick_action_bar_background"
         android:orientation="vertical"
         android:paddingTop="5dp" >
+        <LinearLayout 
+            android:id="@+id/pk_change_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal"
+            >
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 >
+                 <TextView 
+                     android:id="@+id/btn_num"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:background="@drawable/btn_gb_nor"
+                     android:text="修改"
+                     android:padding="5dp"
+                     android:textColor="@color/white"
+                     android:layout_centerVertical="true"
+                     android:layout_alignParentRight="true"
+                     android:layout_marginLeft="5dp"
+                     />
+                 <EditText 
+                     android:id="@+id/edit_num"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:padding="5dp"
+                     android:layout_alignParentLeft="true"
+                     android:layout_toLeftOf="@+id/btn_num"
+                     android:background="@drawable/btn_normal"
+                     android:inputType="number"
+                     android:maxLength="5"
+                     android:hint="Pk基数"
+                     />
+                
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                 >
+                 <TextView 
+                     android:id="@+id/btn_level"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:background="@drawable/btn_gb_nor"
+                     android:text="修改"
+                     android:padding="5dp"
+                     android:textColor="@color/white"
+                     android:layout_centerVertical="true"
+                     android:layout_alignParentRight="true"
+                     android:layout_marginLeft="5dp"
+                     />
+                 <EditText 
+                     android:id="@+id/edit_level"
+                     android:layout_toLeftOf="@+id/btn_level"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:padding="5dp"
+                     android:layout_alignParentLeft="true"
+                     android:inputType="number"
+                     android:background="@drawable/btn_normal" 
+                     android:maxLength="2"
+                     android:hint="Pk数量"  
+                     
+                                       
+                     />
+                
+            </RelativeLayout>
+        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -72,57 +184,29 @@
                     -->
 
                     <RadioGroup
+                        android:id="@+id/btn_group1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal" >
 
                         <RadioButton
+                            android:id="@+id/btn_zdfx"
                             style="@style/main_tab_bottom"
                             android:text="自动分析" />
 
                         <RadioButton
+                            android:id="@+id/btn_zcfx"
                             style="@style/main_tab_bottom"
                             android:layout_marginLeft="5dp"
                             android:text="再次分析" />
 
                         <RadioButton
+                            android:id="@+id/btn_xhzj"
                             style="@style/main_tab_bottom"
                             android:layout_marginLeft="5dp"
                             android:text="星河战舰" />
                     </RadioGroup>
                 </HorizontalScrollView>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:orientation="horizontal" >
-
-                    <TextView
-                        android:id="@+id/btn_p"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/btn_gb_nor"
-                        android:paddingBottom="5dp"
-                        android:paddingLeft="15dp"
-                        android:paddingRight="15dp"
-                        android:paddingTop="5dp"
-                        android:text="P"
-                        android:textColor="@color/white" />
-
-                    <TextView
-                        android:id="@+id/btn_k"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:background="@drawable/btn_gb_nor"
-                        android:paddingBottom="5dp"
-                        android:paddingLeft="15dp"
-                        android:paddingRight="15dp"
-                        android:paddingTop="5dp"
-                        android:text="K"
-                        android:textColor="@color/white" />
-                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -133,16 +217,75 @@
                 android:orientation="vertical" >
 
                 <TextView
+                    android:id="@+id/pk_type"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="12:22:40 P一倍 k两倍"
-                    android:textColor="@color/white" />
+                    
+                    android:textColor="@color/red" />
             </LinearLayout>
         </RelativeLayout>
 
-        <HorizontalScrollView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" >
+
+            <TextView
+                android:id="@+id/btn_p"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_gb_nor"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
+                android:text="P"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/btn_k"
+                android:layout_toRightOf="@+id/btn_p"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/btn_gb_nor"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
+                android:text="K"
+                android:textColor="@color/white" />
+            <TextView 
+                android:id="@+id/pks_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/btn_delate"
+                android:layout_toRightOf="@+id/btn_k"
+                android:background="@drawable/btn_normal"
+                android:textColor="@color/white"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:padding="5dp"
+                />
+            <TextView 
+                android:id="@+id/btn_delate"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/button_back_bg"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:text="X"
+                />
+        </RelativeLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/group_hs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
             android:layout_marginTop="5dp" >
 
             <!--
@@ -243,90 +386,104 @@
             -->
 
             <RadioGroup
+                android:id="@+id/btn_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
                 <RadioButton
+                    android:id="@+id/btn_xl"
                     style="@style/main_tab_bottom"
                     android:text="夏利" />
 
                 <RadioButton
+                    android:id="@+id/btn_stn"
                     style="@style/main_tab_bottom"
                     android:layout_marginLeft="5dp"
                     android:text="桑塔纳" />
 
                 <RadioButton
+                    android:id="@+id/btn_kll"
                     style="@style/main_tab_bottom"
                     android:layout_marginLeft="5dp"
                     android:text="卡罗拉" />
 
                 <RadioButton
+                    android:id="@+id/btn_yg"
                     style="@style/main_tab_bottom"
                     android:layout_marginLeft="5dp"
                     android:text="雅阁" />
 
                 <RadioButton
+                    android:id="@+id/btn_ad"
                     style="@style/main_tab_bottom"
                     android:layout_marginLeft="5dp"
                     android:text="奥迪A4" />
 
                 <RadioButton
+                    android:id="@+id/btn_bm"
                     style="@style/main_tab_bottom"
                     android:layout_marginLeft="5dp"
                     android:text="宝马" />
 
                 <RadioButton
+                    android:id="@+id/btn_bsj"
                     style="@style/main_tab_bottom"
                     android:layout_marginLeft="5dp"
                     android:text="保时捷" />
 
                 <RadioButton
+                    android:id="@+id/btn_lbjn"
                     style="@style/main_tab_bottom"
                     android:layout_marginLeft="5dp"
                     android:text="兰博基尼" />
 
                 <RadioButton
+                    android:id="@+id/btn_bjd"
                     style="@style/main_tab_bottom"
                     android:layout_marginLeft="5dp"
                     android:text="布加迪威航" />
             </RadioGroup>
         </HorizontalScrollView>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal"
-            >
-            
-            <EditText 
+            android:orientation="horizontal" >
+
+            <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/btn_normal"
-                android:padding="5dp"
                 android:hint="输入车辆升级密码"
-                android:textColor="@color/white"
-                />
-            <LinearLayout 
+                android:inputType="number"
+                android:padding="5dp"
+                android:textColor="@color/white" />
+
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:orientation="horizontal"
                 android:layout_marginLeft="5dp"
-                >
-            <TextView 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="升级车辆"
-                android:padding="5dp"
-                android:textColor="@color/white"
-                android:background="@drawable/btn_normal"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                ></TextView>
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.0"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/btn_sj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_normal"
+                    android:padding="5dp"
+                    android:text="升级车辆"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    
+                    android:layout_height="wrap_content" >
+                </TextView>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

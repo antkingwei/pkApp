@@ -10,5 +10,6 @@
     <color name="black">#FF000000</color>
     <color name="widget_btn_nor_color">#66ffffff</color>
     <color name="widget_btn_click_color">#ffffff</color>
+    <color name="red">#FFFF0000</color>
 
 </resources>

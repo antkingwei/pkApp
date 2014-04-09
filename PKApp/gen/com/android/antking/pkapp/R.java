@@ -16,10 +16,11 @@ public final class R {
         public static final int grey=0x7f040002;
         public static final int half_white=0x7f040000;
         public static final int half_yello=0x7f040005;
-        public static final int main_btn_text_color=0x7f040009;
+        public static final int main_btn_text_color=0x7f04000a;
+        public static final int red=0x7f040009;
         public static final int white=0x7f040001;
         public static final int widget_btn_click_color=0x7f040008;
-        public static final int widget_btn_color=0x7f04000a;
+        public static final int widget_btn_color=0x7f04000b;
         public static final int widget_btn_nor_color=0x7f040007;
         public static final int yello=0x7f040004;
     }
@@ -37,17 +38,47 @@ public final class R {
         public static final int btn_click=0x7f020000;
         public static final int btn_gb_nor=0x7f020001;
         public static final int btn_normal=0x7f020002;
-        public static final int gd_quick_action_bar_background=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int navigator_bg=0x7f020005;
+        public static final int button_back_bg=0x7f020003;
+        public static final int button_back_click=0x7f020004;
+        public static final int button_back_nor=0x7f020005;
+        public static final int gd_quick_action_bar_background=0x7f020006;
+        public static final int ic_launcher=0x7f020007;
+        public static final int navigator_bg=0x7f020008;
     }
     public static final class id {
-        public static final int action_settings=0x7f090005;
-        public static final int bottom_pk_view=0x7f090001;
-        public static final int btn_k=0x7f090004;
-        public static final int btn_p=0x7f090003;
-        public static final int pk_webView=0x7f090000;
-        public static final int right_content=0x7f090002;
+        public static final int action_settings=0x7f090020;
+        public static final int bottom_pk_view=0x7f090000;
+        public static final int btn_ad=0x7f09001a;
+        public static final int btn_bjd=0x7f09001e;
+        public static final int btn_bm=0x7f09001b;
+        public static final int btn_bsj=0x7f09001c;
+        public static final int btn_delate=0x7f090013;
+        public static final int btn_group=0x7f090015;
+        public static final int btn_group1=0x7f09000b;
+        public static final int btn_k=0x7f090011;
+        public static final int btn_kll=0x7f090018;
+        public static final int btn_lbjn=0x7f09001d;
+        public static final int btn_level=0x7f090008;
+        public static final int btn_num=0x7f090006;
+        public static final int btn_p=0x7f090010;
+        public static final int btn_sj=0x7f09001f;
+        public static final int btn_stn=0x7f090017;
+        public static final int btn_submit=0x7f090004;
+        public static final int btn_xhzj=0x7f09000e;
+        public static final int btn_xl=0x7f090016;
+        public static final int btn_yg=0x7f090019;
+        public static final int btn_zcfx=0x7f09000d;
+        public static final int btn_zdfx=0x7f09000c;
+        public static final int edit_level=0x7f090009;
+        public static final int edit_num=0x7f090007;
+        public static final int first_edit=0x7f090003;
+        public static final int group_hs=0x7f090014;
+        public static final int pas_content=0x7f090002;
+        public static final int pk_change_content=0x7f090005;
+        public static final int pk_type=0x7f09000f;
+        public static final int pk_webView=0x7f090001;
+        public static final int pks_view=0x7f090012;
+        public static final int right_content=0x7f09000a;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
