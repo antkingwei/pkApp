@@ -123,9 +123,7 @@ public class MainActivity extends Activity {
                             null);
                     break;
                 case 2:
-                    // pk_webView.setLayoutParams(new
-                    // FrameLayout.LayoutParams(screen_width,
-                    // FrameLayout.LayoutParams.MATCH_PARENT));
+
                     pk_webView.loadDataWithBaseURL(null, (String)msg.obj, "text/html", "utf_8",
                             null);
                     break;
