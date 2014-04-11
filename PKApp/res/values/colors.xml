@@ -8,8 +8,12 @@
     <color name="yello">#ffff00</color>
     <color name="half_yello">#9bFFFF00</color>
     <color name="black">#FF000000</color>
-    <color name="widget_btn_nor_color">#66ffffff</color>
-    <color name="widget_btn_click_color">#ffffff</color>
+    <color name="widget_btn_nor_color">#66222222</color>
+    <color name="widget_btn_click_color">#000000</color>
     <color name="red">#FFFF0000</color>
+    <color name="bullo">#cacaca</color>
+    
+    <color name="back_bg">#bbbbbb</color>
+    <color name="text_color">#FF000000</color>
 
 </resources>

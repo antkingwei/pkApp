@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.Window;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
@@ -53,8 +54,9 @@ public class MainActivity extends Activity {
     /**
      * 上面三个按钮 自动分析，再次分析，星河战舰
      */
-    private RadioButton btn_zdfx,btn_zcfx,btn_xhzj;
-    private RadioGroup btn_group1;
+    private Button btn_zdfx,btn_zcfx;
+    private RadioButton btn_xhzj;
+
     /**
      * 两个按钮 p,k;删除按钮
      */
@@ -78,7 +80,7 @@ public class MainActivity extends Activity {
     
     private TextView btn_sj;
     
-    private TextView pk_type;
+//    private TextView pk_type;
     
     private LinearLayout pk_change_content;
     
@@ -129,15 +131,15 @@ public class MainActivity extends Activity {
         webSettings.setSupportZoom(true);
         webSettings.setJavaScriptEnabled(false);
         initUI();
-        btn_zdfx.setChecked(true);
+       
         loadData(pk_number);
         setPasTs();
     }
     private void initUI(){
         pk_change_content = (LinearLayout)this.findViewById(R.id.pk_change_content);
-        btn_group1 = (RadioGroup)this.findViewById(R.id.btn_group1);
-        btn_zdfx= (RadioButton)this.findViewById(R.id.btn_zdfx);
-        btn_zcfx = (RadioButton)this.findViewById(R.id.btn_zcfx);
+
+        btn_zdfx= (Button)this.findViewById(R.id.btn_zdfx);
+        btn_zcfx = (Button)this.findViewById(R.id.btn_zcfx);
         btn_xhzj = (RadioButton)this.findViewById(R.id.btn_xhzj);
         btn_zdfx.setOnClickListener(buttonListener);
         btn_zcfx.setOnClickListener(buttonListener);
@@ -181,7 +183,7 @@ public class MainActivity extends Activity {
         
         btn_sj = (TextView)this.findViewById(R.id.btn_sj);
         btn_sj.setOnClickListener(buttonListener);
-        pk_type = (TextView)this.findViewById(R.id.pk_type);
+//        pk_type = (TextView)this.findViewById(R.id.pk_type);
         
         edit_num = (EditText)this.findViewById(R.id.edit_num);
         edit_level = (EditText)this.findViewById(R.id.edit_level);
@@ -222,12 +224,12 @@ public class MainActivity extends Activity {
         public void onClick(View v) {
             // TODO Auto-generated method stub
             if(v==btn_zdfx){
-                btn_zdfx.setChecked(true);
+                
                 pk_change_content.setVisibility(View.GONE);
                 loadData(pk_number);
             }
             if(v==btn_zcfx){
-                btn_zcfx.setChecked(true);
+               
                 pk_change_content.setVisibility(View.GONE);
                 loadData(pk_number);
             }
@@ -301,17 +303,17 @@ public class MainActivity extends Activity {
          String sb = pk_random.toString().trim();
          int index = sb.indexOf(s);
          if(index<0){
-             pk_type.setText(Utils.getDate()+" 未发现");
+//             pk_type.setText(Utils.getDate()+" 未发现");
              return;
          }
          Log.e("antking_index", ""+index);
          char c = sb.charAt(index+pk_level);
          if(String.valueOf(c).equals("P")){
-             pk_type.setText(Utils.getDate()+" P两倍，K一倍");
+//             pk_type.setText(Utils.getDate()+" P两倍，K一倍");
          }else{
-             pk_type.setText(Utils.getDate()+" P一倍，K两倍");
+//             pk_type.setText(Utils.getDate()+" P一倍，K两倍");
          }
-//         findThePk(s);
+
     }
     private void findThePk(final String s){
         new Thread(){

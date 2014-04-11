@@ -19,17 +19,15 @@
     
     <style name="main_tab_bottom">
         
-        <item name="android:gravity">center_horizontal</item>
+        <item name="android:gravity">center</item>
         <item name="android:textSize">16dp</item>
         <item name="android:textColor">@color/widget_btn_color</item>
         <item name="android:background">@drawable/btn_gb_nor</item>
         <item name="android:layout_width">100dp</item>
-        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:button">@null</item>
         <item name="android:singleLine">false</item>
-        <item name="android:paddingTop">7dp</item>
-        <item name="android:paddingBottom">7dp</item>
-        <item name="android:drawablePadding">2dp</item>
+
         <item name="android:layout_weight">1.0</item>
     </style>
 
