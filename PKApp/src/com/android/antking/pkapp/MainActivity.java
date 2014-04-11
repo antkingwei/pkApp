@@ -4,6 +4,7 @@ package com.android.antking.pkapp;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.text.Html;
 import android.util.DisplayMetrics;
@@ -86,6 +87,9 @@ public class MainActivity extends Activity {
     //修改按钮
     private TextView btn_num,btn_level;
     
+    private TextView pas_th;
+    private EditText pas_edt;
+   
     private Handler myHandler = new Handler(){
         @Override
         public void handleMessage(Message msg){
@@ -127,6 +131,7 @@ public class MainActivity extends Activity {
         initUI();
         btn_zdfx.setChecked(true);
         loadData(pk_number);
+        setPasTs();
     }
     private void initUI(){
         pk_change_content = (LinearLayout)this.findViewById(R.id.pk_change_content);
@@ -184,6 +189,8 @@ public class MainActivity extends Activity {
         btn_level = (TextView)this.findViewById(R.id.btn_level);
         btn_num.setOnClickListener(buttonListener);
         btn_level.setOnClickListener(buttonListener);
+        pas_th = (TextView)this.findViewById(R.id.pk_pas_ts);
+        pas_edt = (EditText)this.findViewById(R.id.pk_pas_edit);
         
     }
     private View.OnClickListener rbtListener = new View.OnClickListener() {
@@ -196,9 +203,10 @@ public class MainActivity extends Activity {
            
         }
     };
-    private void checkBtn(){
+    @SuppressLint("NewApi")
+	private void checkBtn(){
         int length = btn_group.getChildCount();
-        int count = pk_level-BASE_LEVEL;
+        int count = pk_level-BASE_LEVEL-1;
         if(count<length&&count>=0){
             View v = btn_group.getChildAt(count);
             btn_group.check(v.getId());
@@ -240,8 +248,8 @@ public class MainActivity extends Activity {
                 checkPas();
             }
             if(v==btn_sj){
-               
-
+            	doSj();
+            	setPasTs();
             }
             if(v==btn_num){
                 int num = Utils.toInt(edit_num.getText().toString().trim(),0);
@@ -262,6 +270,32 @@ public class MainActivity extends Activity {
             }
         }
     };
+    
+    private void doSj(){
+    	String s = pas_edt.getText().toString().trim();
+    	if(s.length()!=6){
+    		Toast.makeText(getApplicationContext(), "密码长度必须6位", Toast.LENGTH_LONG).show();
+    		return;
+    	}
+    	String ts = pas_th.getText().toString().trim();
+    	
+    	int rn = Utils.toInt(ts.substring(4, 5), 0);
+    	int total = getInt(s,0)*getInt(s,1)+getInt(s,2)+getInt(s,3)+getInt(s,4)*getInt(s,5);
+    	if(rn==total){
+    		if(pk_level<15){
+    		   pk_level++;
+    		   checkBtn();
+    		}else{
+    			Toast.makeText(getApplicationContext(), "您已升级到最高级", Toast.LENGTH_LONG).show();
+    		}
+    		
+    	}else{
+    		Toast.makeText(getApplicationContext(), "密码失败", Toast.LENGTH_LONG).show();
+    	}
+    }
+    private int getInt(String s,int index){
+    	return Utils.toInt(s.substring(index,index+1), 0);
+    }
     private void playPKType(){
          String s = pk_view.getText().toString().trim();
          String sb = pk_random.toString().trim();
@@ -326,13 +360,17 @@ public class MainActivity extends Activity {
             playPKType();
         }
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+   
+    private void setPasTs(){
+    	
+    	pas_th.setText(""+getRandomFou()+getRandom(10)+getRandomFou()+"");
     }
-    
+    private int getRandom(int length){
+    	return (int)(Math.random()*length);
+    }
+    private int getRandomFou(){
+    	return (int)(Math.random()*9000)+1000;
+    }
     private void  loadData(final int number){
         new Thread(){
             @Override
@@ -353,8 +391,7 @@ public class MainActivity extends Activity {
                     }else if(rom ==1){
                         sb.append("<font color='#0000FF'>K</font>");
                         pk_random.append("K");
-                    }
-                    
+                    }                    
                 }
                 sb.append("</body></html>");
                 Message msg = new Message();

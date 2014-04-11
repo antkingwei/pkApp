@@ -46,7 +46,7 @@ public final class R {
         public static final int navigator_bg=0x7f020008;
     }
     public static final class id {
-        public static final int action_settings=0x7f090020;
+        public static final int action_settings=0x7f090022;
         public static final int bottom_pk_view=0x7f090000;
         public static final int btn_ad=0x7f09001a;
         public static final int btn_bjd=0x7f09001e;
@@ -61,7 +61,7 @@ public final class R {
         public static final int btn_level=0x7f090008;
         public static final int btn_num=0x7f090006;
         public static final int btn_p=0x7f090010;
-        public static final int btn_sj=0x7f09001f;
+        public static final int btn_sj=0x7f090020;
         public static final int btn_stn=0x7f090017;
         public static final int btn_submit=0x7f090004;
         public static final int btn_xhzj=0x7f09000e;
@@ -75,6 +75,8 @@ public final class R {
         public static final int group_hs=0x7f090014;
         public static final int pas_content=0x7f090002;
         public static final int pk_change_content=0x7f090005;
+        public static final int pk_pas_edit=0x7f09001f;
+        public static final int pk_pas_ts=0x7f090021;
         public static final int pk_type=0x7f09000f;
         public static final int pk_webView=0x7f090001;
         public static final int pks_view=0x7f090012;
