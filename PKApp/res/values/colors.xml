@@ -13,7 +13,7 @@
     <color name="red">#FFFF0000</color>
     <color name="bullo">#cacaca</color>
     
-    <color name="back_bg">#bbbbbb</color>
+    <color name="back_bg">#cccccc</color>
     <color name="text_color">#FF000000</color>
 
 </resources>

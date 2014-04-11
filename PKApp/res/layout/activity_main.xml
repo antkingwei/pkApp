@@ -4,9 +4,56 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/pk_top"
+        android:background="@color/back_bg"
+        android:paddingTop="2dp"
+        android:paddingRight="2dp"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/first_edit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_normal"
+            android:hint="密码"
+            android:inputType="number"
+            android:padding="5dp"
+            android:textColor="@color/text_color" />
+
+        <TextView
+            android:id="@+id/btn_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/login_button_bg"
+            android:gravity="center"
+            android:text="确认"
+            android:textColor="@color/text_color" />
+
+        <RadioButton
+            android:id="@+id/btn_xhzj"
+            android:textSize="16dp"
+            android:textColor="@color/widget_btn_color"
+            android:background="@drawable/btn_gb_nor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:button="@null"
+            android:layout_weight="1"
+            android:text="星河战舰" />
+    </LinearLayout>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/pk_top"
         android:layout_above="@+id/bottom_pk_view" >
 
         <WebView
@@ -18,32 +65,8 @@
             android:id="@+id/pas_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/gd_quick_action_bar_background"
-            android:padding="15dp" >
-
-            <EditText
-                android:id="@+id/first_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/btn_submit"
-                android:background="@drawable/btn_normal"
-                android:hint="请输入密码"
-                android:padding="5dp"
-                android:password="true"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/btn_submit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/btn_gb_nor"
-                android:gravity="center"
-                android:padding="5dp"
-                android:text="确定"
-                android:textColor="@color/white"
-                android:textSize="18dp" />
+            android:background="@color/back_bg"
+            android:padding="15dp" >         
         </RelativeLayout>
     </FrameLayout>
 
@@ -54,128 +77,98 @@
         android:layout_alignParentBottom="true"
         android:background="@color/back_bg"
         android:orientation="vertical"
-        android:paddingTop="5dp" >
-
-        <LinearLayout
-            android:id="@+id/pk_change_content"
+        android:paddingTop="2dp" >
+        
+        <LinearLayout          
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="5dp"
-            android:visibility="gone" >
-
-            <RelativeLayout
+            >
+            <LinearLayout 
+                android:id="@+id/pk_change_content"
                 android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" >
-
-                <TextView
-                    android:id="@+id/btn_num"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/btn_gb_nor"
-                    android:padding="5dp"
-                    android:text="修改"
-                    android:textColor="@color/text_color" />
-
+                android:visibility="gone" 
+                android:orientation="vertical"
+                >
                 <EditText
                     android:id="@+id/edit_num"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_toLeftOf="@+id/btn_num"
                     android:background="@drawable/btn_normal"
                     android:hint="Pk基数"
                     android:inputType="number"
-                    android:maxLength="5"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:maxLength="10"
                     android:padding="5dp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1" >
-
                 <TextView
-                    android:id="@+id/btn_level"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dp"
+                    android:id="@+id/btn_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"                 
                     android:background="@drawable/btn_gb_nor"
-                    android:padding="5dp"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
                     android:text="修改"
                     android:textColor="@color/text_color" />
-
                 <EditText
                     android:id="@+id/edit_level"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_toLeftOf="@+id/btn_level"
+                    android:layout_height="wrap_content"               
                     android:background="@drawable/btn_normal"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
                     android:hint="Pk数量"
                     android:inputType="number"
                     android:maxLength="2"
                     android:padding="5dp" />
-            </RelativeLayout>
+                <TextView
+                    android:id="@+id/btn_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/btn_gb_nor"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:text="修改"
+                    android:textColor="@color/text_color" />
+            </LinearLayout>
+            <ListView 
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/pk_listview"   
+                android:background="@color/white"
+                ></ListView>
+ 
         </LinearLayout>
 
-        <RadioButton
-            android:id="@+id/btn_xhzj"
-            style="@style/main_tab_bottom"
-            android:layout_marginLeft="5dp"
-            android:text="星河战舰" />
-
         <LinearLayout
-            android:layout_marginTop="2dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp" >
 
             <Button
                 android:id="@+id/btn_zdfx"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:paddingTop="5dp"
+                android:layout_weight="1"
                 android:background="@drawable/login_button_bg"
                 android:paddingBottom="5dp"
+                android:paddingTop="5dp"
                 android:text="自动分析" />
 
             <Button
                 android:id="@+id/btn_zcfx"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/login_button_bg"
-                android:paddingTop="5dp"
                 android:paddingBottom="5dp"
+                android:paddingTop="5dp"
                 android:text="再次分析" />
         </LinearLayout>
-
-        <!-- <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <LinearLayout
-                android:id="@+id/right_content"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:orientation="vertical" >
-
-                <TextView
-                    android:id="@+id/pk_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/red" />
-            </LinearLayout>
-        </RelativeLayout> -->
 
         <TextView
             android:id="@+id/pks_view"
@@ -183,18 +176,17 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginTop="2dp"
             android:background="@drawable/btn_normal"
+            android:gravity="center_vertical"
+            android:paddingBottom="7dp"
             android:paddingLeft="7dp"
             android:paddingTop="7dp"
-            android:paddingBottom="7dp"
-            android:gravity="center_vertical"
             android:textColor="@color/text_color" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="2dp"
             android:orientation="horizontal" >
 
             <TextView
@@ -215,7 +207,6 @@
                 android:layout_weight="1"
                 android:background="@drawable/login_button_bg"
                 android:gravity="center"
-
                 android:text="K"
                 android:textColor="@color/text_color" />
 
@@ -236,7 +227,6 @@
             android:id="@+id/group_hs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:scrollbars="none" >
 
             <!--
@@ -345,54 +335,63 @@
                 <RadioButton
                     android:id="@+id/btn_xl"
                     style="@style/main_tab_bottom"
+                    android:tag="7"
                     android:text="夏利" />
 
                 <RadioButton
                     android:id="@+id/btn_stn"
                     style="@style/main_tab_bottom"
                     android:layout_marginLeft="5dp"
+                    android:tag="8"
                     android:text="桑塔纳" />
 
                 <RadioButton
                     android:id="@+id/btn_kll"
                     style="@style/main_tab_bottom"
                     android:layout_marginLeft="5dp"
+                    android:tag="9"
                     android:text="卡罗拉" />
 
                 <RadioButton
                     android:id="@+id/btn_yg"
                     style="@style/main_tab_bottom"
                     android:layout_marginLeft="5dp"
+                    android:tag="10"
                     android:text="雅阁" />
 
                 <RadioButton
                     android:id="@+id/btn_ad"
                     style="@style/main_tab_bottom"
                     android:layout_marginLeft="5dp"
+                    android:tag="11"
                     android:text="奥迪A4" />
 
                 <RadioButton
                     android:id="@+id/btn_bm"
                     style="@style/main_tab_bottom"
                     android:layout_marginLeft="5dp"
+                    android:tag="12"
                     android:text="宝马" />
 
                 <RadioButton
                     android:id="@+id/btn_bsj"
                     style="@style/main_tab_bottom"
                     android:layout_marginLeft="5dp"
+                    android:tag="13"
                     android:text="保时捷" />
 
                 <RadioButton
                     android:id="@+id/btn_lbjn"
                     style="@style/main_tab_bottom"
                     android:layout_marginLeft="5dp"
+                    android:tag="14"
                     android:text="兰博基尼" />
 
                 <RadioButton
                     android:id="@+id/btn_bjd"
                     style="@style/main_tab_bottom"
                     android:layout_marginLeft="5dp"
+                    android:tag="15"
                     android:text="布加迪威航" />
             </RadioGroup>
         </HorizontalScrollView>
@@ -400,14 +399,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:orientation="horizontal" >
 
             <EditText
                 android:id="@+id/pk_pas_edit"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-
                 android:layout_margin="3dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_normal"
@@ -420,7 +417,6 @@
                 android:id="@+id/btn_sj"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-
                 android:layout_weight="1"
                 android:background="@drawable/login_button_bg"
                 android:gravity="center"
