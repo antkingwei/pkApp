@@ -112,8 +112,6 @@ public class MainActivity extends Activity {
     
     private ListView pk_listView;
     
-    
-
     private Handler myHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {

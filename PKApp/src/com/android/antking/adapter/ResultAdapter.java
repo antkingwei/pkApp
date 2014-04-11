@@ -44,8 +44,9 @@ public class ResultAdapter extends BaseAdapter{
             convertView = new TextView(mContext);           
         }
         if(position==0)
-            convertView.setBackgroundColor(Color.RED);
+            convertView.setBackgroundColor(mContext.getResources().getColor(R.color.holo_orange_dark));
         ((TextView)convertView).setTextColor(Color.BLACK);
+        ((TextView)convertView).setTextSize(16);
         ((TextView)convertView).setText(list.get(position));
         return convertView;
     }
